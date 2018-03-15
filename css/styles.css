@@ -1,0 +1,95 @@
+/*variables*/
+
+/*variables*/
+
+:root {
+  --color-ppal: #242331;
+  --color-fondo: #fdfffc;
+  --text-colors: #235789;
+  --independence: #384E77;
+  --cerulean: #1B4079;
+}
+
+/* -- estilos para el body --*/
+
+@import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro');
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+body {
+  min-height: 100%;
+}
+
+#titleName {
+  font-family: 'Source Sans Pro', sans-serif;
+  padding-top: 3%;
+  font-size: 2.5em;
+  color: var(--text-colors);
+}
+
+canvas {
+  padding-left: 0;
+  padding-right: 0;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+}
+
+#subtitleName {
+  font-family: 'Source Sans Pro', sans-serif;
+  font-size: 1.2em;
+  font-style: normal;
+  color: var(--text-colors);
+}
+
+.titles {
+  font-family: 'Source Sans Pro', sans-serif;
+  font-size: 2.5em;
+  color: var(--text-colors);
+}
+
+.rss {
+  color:
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  font-family: 'Roboto';
+}
+
+#imgPPal {
+  width: 30%;
+  height: auto;
+}
+
+.cabecera {
+  height: 20%;
+}
+
+.bodyHeader {
+  height: 5%;
+}
+
+.bodyContenido {
+  min-height: 60%;
+  background-color: var(--color-fondo);
+}
+
+.bodyFooter {
+  height: 15%;
+}
+
+#footer {
+  height: 100%;
+  bottom: 0px;
+}
+
+.content {
+  height: 100%;
+}
+
+/* Estilos en la cabecera */
+
+#navContainer {
+  background-color: var(--color-ppal);
+}
