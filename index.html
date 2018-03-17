@@ -8,34 +8,40 @@
   <script type="text/javascript" src="js/jquery.min.js"></script>
   <script src="js/uikit.min.js"></script>
   <script src="js/uikit-icons.min.js"></script>
+  <script src="libs/validation/dist/jquery.validate.js"></script>
   <link type="text/css" rel="stylesheet" href="css/styles.css" media="screen,projection" />
   <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
   <!--Let browser know website is optimized for mobile-->
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script>
+    $(document).on('click', 'a[href^="#"]', function(event) {
+      event.preventDefault();
+
+      $('html, body').animate({
+        scrollTop: $($.attr(this, 'href')).offset().top
+      }, 500);
+    });
+  </script>
 </head>
 
 <body>
   <!-- Contenedor con imagen del principio -->
   <div class="uk-background-blend-multiply uk-background-primary uk-background-cover uk-height-large uk-panel uk-flex uk-flex-center uk-flex-middle" style="background-image: url(images/forest.jpeg); cabecera">
-    <!-- <div class="uk-container-expand uk-background-primary cabecera"> -->
     <div class=""><img class="uk-align-center uk-border-circle" src="images/soul.jpg" alt="" id="imgPPal"></div>
 
   </div>
   <!-- Nav bar -->
-  <nav class="uk-navbar-container uk-margin body uk-margin-remove-top uk-margin-remove-bottom" id="navContainer">
+  <nav class="uk-navbar-container uk-margin body uk-margin-remove-top uk-margin-remove-bottom" id="navContainer" uk-sticky="bottom: #offset">
     <div class="uk-container uk-container-expand">
-      <div class="uk-navbar">
+      <div class="uk-navbar ">
         <div class="uk-navbar-center">
-
-          <a class="uk-navbar-item uk-logo uk-text-success" href="#">Logo</a>
-
           <ul class="uk-navbar-nav uk-text-success">
-
-            <li><a href="#">Parent</a></li>
-            <li><a href="#">Item</a></li>
-            <li><a href="#">Item</a></li>
+            <li><a href="#aboutme" class="uk-text-bold">Sobre mí</a></li>
+            <li><a href="#experiencia" class="uk-text-bold">Experiencia</a></li>
+            <li><a href="#estudios" class="uk-text-bold">Estudios</a></li>
+            <li><a href="#habilidades" class="uk-text-bold">Habilidades</a></li>
+            <li><a href="#portfolio" class="uk-text-bold">Portfolio</a></li>
           </ul>
-
         </div>
       </div>
     </div>
@@ -53,9 +59,9 @@
           <div class="uk-first-column">
             <div class="uk-card uk-card-secondary uk-card-flex">
               <div class="uk-card-body">
-                <h3 class="uk-card-title uk-text-center uk-text-uppercase">Sobre mi</h3>
+                <h3 class="uk-card-title uk-text-center uk-text-uppercase" id="aboutme">Sobre mi</h3>
                 <p class="uk-text-primary uk-text-justify">
-                  Soy una persona <span class="uk-text-bold">agradable y amable. En el trabajo, detallista, responsable y muy puntual</span>.Suelo adaptarme al trabajo en equipo fácilmente. En mi tiempo libre, disfruto de la música y de la lectura. Actualmente,
+                  Soy una persona <span class="uk-text-bold">agradable y amable. En el trabajo, detallista, responsable y muy puntual</span>. Suelo adaptarme al trabajo en equipo fácilmente. En mi tiempo libre, disfruto de la música y de la lectura. Actualmente,
                   tengo conocimientos de <span class="uk-text-bold"> HTML5, CSS, PHP, SQL, Java, Android, Javascript, JQuery
                   Unity, Python, C#</span> gracias a los dos grados superiores que he cursado. Actualmente, me centro en aprender nuevos métodos y estándares de programación así como usar frameworks y patrones de programación nuevos. <span class="uk-text-bold">Mi meta, es llegar a ser webmaster.</span>
                 </p>
@@ -72,9 +78,180 @@
       </div>
       <!-- Experiencia -->
       <div class="uk-container ">
-        <h3 class="uk-text-uppercase uk-text-bold uk-text-center uk-padding-large titles">experiencia</h3>
+        <h3 class="uk-text-uppercase uk-text-bold uk-text-center uk-padding-large titles" id="experiencia">experiencia</h3>
         <div class="uk-grid-match uk-grid">
           <div class="uk-width-1-3@m"></div>
+          <div class="uk-width-1-3@m">
+            <div class="uk-card uk-card-secondary uk-card-flex">
+              <div class="uk-card-header">
+                <h3 class="uk-text-primary uk-text-center">15/09/2015 - 28/02/2016</h3>
+              </div>
+              <div class="uk-card-body">
+                <h3 class="uk-card-title uk-text-center uk-text-primary uk-text-uppercase">adhoc webs</h3>
+                <p class="uk-text-primary uk-text-justify">
+                  Dos meses de contrato en la empresa de desarrollo web Adhoc Webs. Durante ese tiempo, sumado al tiempo de las prácticas de empresa, he formado parte del equipo de desarrollo web, <span class="uk-text-bold"> realizando el maquetado de los proyectos
+                  así como el responsive. </span>
+                </p>
+              </div>
+              <div class="uk-card-footer uk-text-center">
+                <a uk-icon="ratio: 2; icon: world" class="uk-icon" href="https://adhocwebs.com/"></a>
+              </div>
+            </div>
+          </div>
+          <div class="uk-width-1-3@m"></div>
+        </div>
+        <!-- Estudios -->
+        <h3 class="uk-text-uppercase uk-text-bold uk-text-center uk-padding-large titles" id="estudios">estudios</h3>
+        <div class="uk-child-width-expand@s uk-grid-parallax" uk-grid-parallax="translate:200">
+          <div class="uk-width-1-3@m">
+            <div class="uk-card uk-card-secondary uk-card-flex">
+              <div class="uk-card-header">
+                <h3 class="uk-text-primary uk-text-center">2016 - Ahora</h3>
+              </div>
+              <div class="uk-card-body">
+                <h3 class="uk-card-title uk-text-center uk-text-primary uk-text-uppercase">CFGS Desarrollo de Aplicaciones Multiplataforma</h3>
+                <p class="uk-text-primary uk-text-justify">
+                  Actualmente, estoy finalizando el CFGS de Desarrollo de Aplicaciones Multiplataforma en el IES Saladillo, Algeciras. Gracias a este ciclo, estoy ampliando y profundizando en cononimientos de progrmación back-end y front-end para aplicaciones en plataformas
+                  como Unity, Windows y Android, entre otras.
+                </p>
+              </div>
+              <div class="uk-card-footer uk-text-center">
+                <a uk-icon="ratio: 2; icon: world" class="uk-icon" href="http://www.iessaladillo.es/"></a>
+              </div>
+            </div>
+          </div>
+          <div class="uk-width-1-3@m">
+            <div class="uk-card uk-card-secondary uk-card-flex uk-margin-top">
+              <div class="uk-card-header">
+                <h3 class="uk-text-primary uk-text-center">2013 - 2015</h3>
+              </div>
+              <div class="uk-card-body">
+                <h3 class="uk-card-title uk-text-center uk-text-primary uk-text-uppercase">CFGS Desarrollo de Aplicaciones Web</h3>
+                <p class="uk-text-primary uk-text-justify">
+                  Durante dos años he cursado el ciclo formativo de Desarrollo de Aplicaciones Web en el IES Ntra Sra de los Remedios en Ubrique, Cádiz. Entre otros conceptos, he aprendido a realizar páginas web con HTML5, CSS y a realizar el responsive web para adaptar
+                  las páginas a los dispositivos.
+                </p>
+              </div>
+              <div class="uk-card-footer uk-text-center">
+                <a uk-icon="ratio: 2; icon: world" class="uk-icon" href="http://www.ieslosremedios.org/"></a>
+              </div>
+            </div>
+          </div>
+          <div class="uk-width-1-3@m ">
+            <div class="uk-card uk-card-secondary uk-card-flex uk-margin-top">
+              <div class="uk-card-header">
+                <h3 class="uk-text-primary uk-text-center">2011 - 2013</h3>
+              </div>
+              <div class="uk-card-body">
+                <h3 class="uk-card-title uk-text-center uk-text-primary uk-text-uppercase">Bachillerato de humanidades</h3>
+                <p class="uk-text-primary uk-text-justify">
+                  Finalicé mis estudios secundarios realizando el bachillerato de humanidades en el I.E.S Almadraba, Tarifa, Cádiz. Acto seguido, he hecho los exámenes de selectividad en su parte general.
+                </p>
+              </div>
+              <div class="uk-card-footer uk-text-center">
+                <a uk-icon="ratio: 2; icon: world" class="uk-icon" href="http://iesalmadraba.org/"></a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- SKILLS -->
+        <h3 class="uk-text-uppercase uk-text-bold uk-text-center uk-padding-large titles" id="habilidades">habilidades</h3>
+        <div class="uk-child-width-expand@s uk-grid-parallax" uk-grid-parallax="translate:200">
+          <div class="uk-width-1-3@m">
+            <div class="uk-card uk-card-secondary uk-card-flex">
+              <div class="uk-card-header">
+                <h3 class="uk-text-primary uk-text-center">Programación</h3>
+              </div>
+              <div class="uk-card-body">
+                <!-- languagues -->
+                <p class="percentTitle">PHP</p>
+                <p class="percentText">70%</p>
+                <progress id="js-progressbar" class="uk-progress" value="70" max="100"></progress>
+                <p class="percentTitle">HTML5</p>
+                <p class="percentText">75%</p>
+                <progress id="js-progressbar" class="uk-progress" value="75" max="100"></progress>
+                <p class="percentTitle">CSS</p>
+                <p class="percentText">85%</p>
+                <progress id="js-progressbar" class="uk-progress" value="85" max="100"></progress>
+                <p class="percentTitle">Java</p>
+                <p class="percentText">70%</p>
+                <progress id="js-progressbar" class="uk-progress" value="70" max="100"></progress>
+                <p class="percentTitle">Android</p>
+                <p class="percentText">60%</p>
+                <progress id="js-progressbar" class="uk-progress" value="60" max="100"></progress>
+              </div>
+            </div>
+          </div>
+          <div class="uk-width-1-3@m">
+            <div class="uk-card uk-card-secondary uk-card-flex">
+              <div class="uk-card-header">
+                <h3 class="uk-text-primary uk-text-center">Personal</h3>
+              </div>
+              <div class="uk-card-body">
+                <!-- personal -->
+                <p class="percentTitle">Comunicación</p>
+                <p class="percentText">45%</p>
+                <progress id="js-progressbar" class="uk-progress" value="45" max="100"></progress>
+                <p class="percentTitle">Puntualidad</p>
+                <p class="percentText">100%</p>
+                <progress id="js-progressbar" class="uk-progress" value="100" max="100"></progress>
+                <p class="percentTitle">Liderazgo</p>
+                <p class="percentText">45%</p>
+                <progress id="js-progressbar" class="uk-progress" value="45" max="100"></progress>
+                <p class="percentTitle">Análisis</p>
+                <p class="percentText">60%</p>
+                <progress id="js-progressbar" class="uk-progress" value="60" max="100"></progress>
+                <p class="percentTitle">Paciencia</p>
+                <p class="percentText">90%</p>
+                <progress id="js-progressbar" class="uk-progress" value="90" max="100"></progress>
+              </div>
+            </div>
+          </div>
+          <div class="uk-width-1-3@m">
+            <div class="uk-card uk-card-secondary uk-card-flex">
+              <div class="uk-card-header">
+                <h3 class="uk-text-primary uk-text-center">Lenguajes</h3>
+              </div>
+              <div class="uk-card-body">
+                <!-- Lenguajes -->
+                <p class="percentTitle">Español</p>
+                <p class="percentText">100%</p>
+                <progress id="js-progressbar" class="uk-progress" value="100" max="100"></progress>
+                <p class="percentTitle">Inglés</p>
+                <p class="percentText">65%</p>
+                <progress id="js-progressbar" class="uk-progress" value="65" max="100"></progress>
+                <p class="percentTitle">Francés</p>
+                <p class="percentText">30%</p>
+                <progress id="js-progressbar" class="uk-progress" value="30" max="100"></progress>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Portfolio -->
+        <h3 class="uk-text-uppercase uk-text-bold uk-text-center uk-padding-large titles" id="portfolio">Porfolio</h3>
+        <div class="uk-child-width-expand@s uk-grid">
+          <div class="uk-width-1-3@m"></div>
+          <div class="uk-width-1-3@m">
+            <div class="uk-card uk-card-secondary">
+              <div class="uk-card-media-top">
+                <img src="images/cardenas.PNG" alt="">
+              </div>
+              <div class="uk-card-body  uk-text-justify">
+                <h3 class="uk-card-title uk-text-center">Auto escuela Cárdenas</h3>
+                <p>Realización de la página web de la auto escuela Cárdenas. Realización de la maquetación, imagen y responsive.</p>
+              </div>
+              <div class="uk-card-footer">
+                <p>
+                  <a class="uk-button uk-button-primary uk-width-1-1 uk-text-bold" href="http:www.autoescuelacardenas.com">Acceder al sitio</a>
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="uk-width-1-3@m"></div>
+        </div>
+        <!-- Contact -->
+        <!-- <h3 class="uk-text-uppercase uk-text-bold uk-text-center uk-padding-large titles">Contacto</h3> -->
+        <!-- <div class="uk-child-width-expand@s uk-grid">
           <div class="uk-width-1-3@m">
             <div class="uk-card uk-card-secondary uk-card-flex">
               <div class="uk-card-header">
@@ -92,133 +269,70 @@
               </div>
             </div>
           </div>
-          <div class="uk-width-1-3@m"></div>
-        </div>
-        <!-- Estudios -->
-        <h3 class="uk-text-uppercase uk-text-bold uk-text-center uk-padding-large titles">estudios</h3>
-        <div class="uk-child-width-expand@s uk-grid-parallax" uk-grid-parallax="translate:200">
-          <div class="uk-width-1-3@m">
-            <div class="uk-card uk-card-secondary uk-card-flex">
-              <div class="uk-card-header">
-                <h3 class="uk-text-primary uk-text-center">2016 - Ahora</h3>
-              </div>
+          <div class="uk-width-2-3@m">
+            <div class="uk-card uk-card-default uk-card-flex">
               <div class="uk-card-body">
-                <h3 class="uk-card-title uk-text-center uk-text-primary uk-text-uppercase">CFGS Desarrollo de Aplicaciones Multiplataforma</h3>
-                <p class="uk-text-primary uk-text-justify">
-                  Actualmente, estoy finalizando el CFGS de Desarrollo de Aplicaciones Multiplataforma en el IES Saladillo, Algeciras. Gracias a este ciclo, estoy ampliando y profundizando en cononimientos de progrmación back-end y front-end para aplicaciones en plataformas
-                  como Unity, Windows y Android, entre otras.
-                </p>
-              </div>
-              <div class="uk-card-footer uk-text-center">
-                <a uk-icon="ratio: 2; icon: world" class="uk-icon" href="http://www.iessaladillo.es/"></a>
+                <form action="php/sendMail.php" id="contactForm" method="post">
+                  <fieldset class="uk-fieldset">
+                    <div class="uk-margin">
+                      <input class="uk-input" type="text" placeholder="Nombre y apellidos" id="cname" name="name" minlength="2" required>
+                    </div>
+                    <div class="uk-margin">
+                      <input class="uk-input" type="text" placeholder="Título de la consulta" id="ctitle" name="title" minlength="2">
+                    </div>
+                    <div class="uk-margin">
+                      <input class="uk-input" type="email" placeholder="Email" id="cemail" type="email" name="email" required>
+                    </div>
+                    <div class="uk-margin">
+                      <textarea class="uk-textarea" rows="8" placeholder="Mensaje" id="ccomment" name="comment" required></textarea>
+                    </div>
+                    <div class="uk-margin">
+                      <button class="uk-button uk-button-secondary uk-width-1-1 uk-container-center" type="submit" value="Submit">Enviar</button>
+                    </div>
+                  </fieldset>
+                </form>
+                <script>
+                  $("#contactForm").validate();
+                </script>
               </div>
             </div>
           </div>
-          <div class="uk-width-1-3@m">
-            <div class="uk-card uk-card-secondary uk-card-flex uk-margin-top">
-              <div class="uk-card-header">
-                <h3 class="uk-text-primary uk-text-center">2013 - 2015</h3>
-              </div>
-              <div class="uk-card-body">
-                <h3 class="uk-card-title uk-text-center uk-text-primary uk-text-uppercase">CFGS Dsarrollo de Aplicaciones Web</h3>
-                <p class="uk-text-primary uk-text-justify">
-                Durante dos años he cursado el ciclo formativo de Desarrollo de Aplicaciones Web en el IES Ntra Sra de los Remedios en Ubrique, Cádiz. Entre otros conceptos,
-                he aprendido a realizar páginas web con HTML5, CSS y a realizar el responsive web para adaptar la web a los dispositivos.
-                </p>
-              </div>
-              <div class="uk-card-footer uk-text-center">
-                <a uk-icon="ratio: 2; icon: world" class="uk-icon" href="http://www.ieslosremedios.org/"></a>
-              </div>
-            </div>
-          </div>
-          <div class="uk-width-1-3@m ">
-            <div class="uk-card uk-card-secondary uk-card-flex uk-margin-top">
-              <div class="uk-card-header">
-                <h3 class="uk-text-primary uk-text-center">2011 - 2013</h3>
-              </div>
-              <div class="uk-card-body">
-                <h3 class="uk-card-title uk-text-center uk-text-primary uk-text-uppercase">Bachillerato de humanidades</h3>
-                <p class="uk-text-primary uk-text-justify">
-                  Finalicé mis estudios secundarios realizando el bachillerato de humanidades en el I.E.S Almadraba, Tarifa, Cádiz. Acto seguido,
-                  he hecho los exámenes de selectividad en su parte general.
-                </p>
-              </div>
-              <div class="uk-card-footer uk-text-center">
-                <a uk-icon="ratio: 2; icon: world" class="uk-icon" href="http://iesalmadraba.org/"></a>
-              </div>
-            </div>
-          </div>
-        </div>
-        <!-- SKILLS -->
-        <h3 class="uk-text-uppercase uk-text-bold uk-text-center uk-padding-large titles">habilidades</h3>
-        <div class="uk-child-width-expand@s uk-grid-parallax" uk-grid-parallax="translate:200">
-          <div class="uk-width-1-3@m">
-            <div class="uk-card uk-card-secondary uk-card-flex">
-              <div class="uk-card-header">
-                <h3 class="uk-text-primary uk-text-center">2016 - Ahora</h3>
-              </div>
-              <div class="uk-card-body">
-                <h3 class="uk-card-title uk-text-center uk-text-primary uk-text-uppercase">CFGS Desarrollo de Aplicaciones Multiplataforma</h3>
-                <p class="uk-text-primary uk-text-justify">
-                  Actualmente, estoy finalizando el CFGS de Desarrollo de Aplicaciones Multiplataforma en el IES Saladillo, Algeciras. Gracias a este ciclo, estoy ampliando y profundizando en cononimientos de progrmación back-end y front-end para aplicaciones en plataformas
-                  como Unity, Windows y Android, entre otras.
-                </p>
-              </div>
-              <div class="uk-card-footer uk-text-center">
-                <a uk-icon="ratio: 2; icon: world" class="uk-icon" href="http://www.iessaladillo.es/"></a>
-              </div>
-            </div>
-          </div>
-          <div class="uk-width-1-3@m">
-            <div class="uk-card uk-card-secondary uk-card-flex uk-margin-top">
-              <div class="uk-card-header">
-                <h3 class="uk-text-primary uk-text-center">2013 - 2015</h3>
-              </div>
-              <div class="uk-card-body">
-                <h3 class="uk-card-title uk-text-center uk-text-primary uk-text-uppercase">CFGS Dsarrollo de Aplicaciones Web</h3>
-                <p class="uk-text-primary uk-text-justify">
-                Durante dos años he cursado el ciclo formativo de Desarrollo de Aplicaciones Web en el IES Ntra Sra de los Remedios en Ubrique, Cádiz. Entre otros conceptos,
-                he aprendido a realizar páginas web con HTML5, CSS y a realizar el responsive web para adaptar la web a los dispositivos.
-                </p>
-              </div>
-              <div class="uk-card-footer uk-text-center">
-                <a uk-icon="ratio: 2; icon: world" class="uk-icon" href="http://www.ieslosremedios.org/"></a>
-              </div>
-            </div>
-          </div>
-          <div class="uk-width-1-3@m ">
-            <div class="uk-card uk-card-secondary uk-card-flex uk-margin-top">
-              <div class="uk-card-header">
-                <h3 class="uk-text-primary uk-text-center">2011 - 2013</h3>
-              </div>
-              <div class="uk-card-body">
-                <h3 class="uk-card-title uk-text-center uk-text-primary uk-text-uppercase">Bachillerato de humanidades</h3>
-                <p class="uk-text-primary uk-text-justify">
-                  Finalicé mis estudios secundarios realizando el bachillerato de humanidades en el I.E.S Almadraba, Tarifa, Cádiz. Acto seguido,
-                  he hecho los exámenes de selectividad en su parte general.
-                </p>
-              </div>
-              <div class="uk-card-footer uk-text-center">
-                <a uk-icon="ratio: 2; icon: world" class="uk-icon" href="http://iesalmadraba.org/"></a>
-              </div>
-            </div>
-          </div>
-        </div>
+        </div> -->
       </div>
     </div>
     <!-- CONTENIDO DATOS -->
   </div>
+  <script type="text/javascript">
+    $(document).ready(function() {
+
+      $('.ir-arriba').click(function() {
+        $('body, html').animate({
+          scrollTop: '0px'
+        }, 300);
+      });
+
+      $(window).scroll(function() {
+        if ($(this).scrollTop() > 0) {
+          $('.ir-arriba').slideDown(300);
+        } else {
+          $('.ir-arriba').slideUp(300);
+        }
+      });
+
+    });
+  </script>
+  <span class="ir-arriba" style="display: inline;">
+    <a class="uk-icon-button-primary uk-icon" href="#" uk-icon="icon: chevron-up; ratio: 2;">
+    </a>
+  </span>
   <!-- Contenido -->
   <!-- FOOTER -->
   <div class="bodyFooter uk uk-margin-remove-top">
     <footer id="footer" class="uk-modal-footer uk-background-secondary uk-sticky=" bottom: true " uk-section-small uk-width-auto uk-display-block">
       <div class="uk-container">
-        <div class="uk-grid-large uk-flex-middle uk-grid" uk-grid="">
-          <div class="uk-width-expand uk-first-column">
-            <p class="uk-text-large">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.</p>
-          </div>
-          <div class="uk-width-auto">
-            <a class="uk-button uk-button-default uk-button-large" href="#">Button</a>
+        <div class="uk-grid-large uk-flex-middle uk-grid  uk-margin-top" uk-grid="">
+          <div class="uk-width-expand uk-first-column uk-width-1-1 uk-text-center">
+            <span>© Curriculum Vitae | Designed by Ramón Guardia López</span>
           </div>
         </div>
       </div>
